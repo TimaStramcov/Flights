@@ -1,0 +1,98 @@
+.flight-list{
+    width: 75%;
+    height: 80vh;
+    margin-top: 30px;
+    overflow: auto;
+    padding: 10px;
+    color: rgb(69, 69, 69);
+
+    p{
+        font-size: 12px;
+    }
+    &__item{
+        height: max-content;
+        width: 100%;
+        margin-bottom: 20px;
+
+        &-header{
+            background-color: rgba(0, 101, 174, 0.8);
+            text-align: right;
+            color: white;
+            padding-right: 20px;
+
+            h3{
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+    }
+    &::-webkit-scrollbar{
+        width: 7px;
+        background-color: white;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: gray;
+    }
+
+    section{
+        padding: 10px;
+    }
+}
+
+.flight-list__item-date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flight-list__item-path{
+    text-align: center;
+    padding-bottom: 5px;
+    span{
+        color: rgb(0, 115, 255);
+    }
+}
+
+.flight-list__item-legs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    .line{
+        width: 30%;
+        height: 1px;
+        background-color: gray;
+        margin: 0 10px;
+    }
+    p{
+        color:rgba(228, 136, 15, 0.9)
+    }
+}
+
+.add-btn-flight{
+    width: 100%;
+    height: 30px;
+    color: white;
+    background-color: rgba(228, 136, 15, 0.687);
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.show-more-btn{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    color: white;
+    background-color: rgb(0, 115, 255);
+}
+
+.flight-list__item-date{
+    span{
+        font-size: 12px;
+        color: rgb(0, 115, 255);
+    }
+}

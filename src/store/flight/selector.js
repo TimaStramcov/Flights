@@ -1,0 +1,1 @@
+export const flightSelector = (state) => state.flight;
