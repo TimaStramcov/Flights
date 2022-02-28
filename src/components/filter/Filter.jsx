@@ -29,7 +29,7 @@ const Filter = () => {
   }, [fromCost, toCost])
 
   const newResultFilter = () => {
-    const newFilter = []
+    let newFilter = []
 
     if (filterObj.nameCompany.length > 0) {
       newFilter.push(...allFlights.filter(company => filterObj.nameCompany.indexOf(company.flight.carrier.caption) !== -1))
@@ -45,13 +45,14 @@ const Filter = () => {
       newFilter.push(...resArr)
     }
     if (newFilter.length > 0) {
-      newFilter.filter((flight) => flight.flight.price.total.amount > filterObj.price.min && flight.flight.price.total.amount < filterObj.price.max)
-      dispatch(filterSortAction(newFilter))
+      const filterCost = newFilter.filter((flight) => flight.flight.price.total.amount > filterObj.price.min && flight.flight.price.total.amount < filterObj.price.max)
+      dispatch(filterSortAction(filterCost))
     } else {
       const filterCost = allFlights.filter((flight) => flight.flight.price.total.amount > filterObj.price.min && flight.flight.price.total.amount < filterObj.price.max)
       dispatch(filterSortAction(filterCost))
     }
   }
+
 
   useEffect(() => {
     newResultFilter()
